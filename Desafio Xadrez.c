@@ -17,10 +17,11 @@ int main() {
     int torre = 0;
     int bispo = 0;
     int rainha;
+    int cavalo = 1;
     
     //Menu de escolha
 
-    printf ("\nDigite o número referente a peça a ser movimentada:\n\n1. Torre\n2. Bispo\n3. Rainha\n0. Sair\n\n");
+    printf ("\nDigite o número referente a peça a ser movimentada:\n\n1. Torre\n2. Bispo\n3. Rainha\n4. Cavalo\n0. Sair\n\n");
     scanf ("%d", &escolha);
 
     switch (escolha)
@@ -67,6 +68,26 @@ int main() {
         
         break;
 
+    //Movimento Cavalo
+
+    case 4:
+        
+        printf ("\nVocê escolheu o Cavalo!\n\n");
+
+        while (cavalo == 1)
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                printf ("Baixo\n");
+            }
+            
+            printf ("Esquerda\n");
+            cavalo--;
+
+        }
+        
+        break;
+
     //Opção de saída do programa
 
     case 0:
@@ -82,7 +103,7 @@ int main() {
 
         break;
     }
-    } while (escolha > 0 && escolha <= 3);
+    } while (escolha > 0 && escolha <= 4);
 
 
 

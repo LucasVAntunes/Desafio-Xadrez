@@ -1,5 +1,29 @@
 #include <stdio.h>
 
+void movertorre (int casas){
+    if (casas > 0){
+        printf ("Direita\n");
+        movertorre (casas - 1);
+    }
+}
+
+void moverrainha (int casas){
+    if (casas > 0){
+        printf ("Esquerda\n");
+        moverrainha (casas - 1);
+    }
+}
+
+void moverbispo (int casas){
+    if (casas > 0){
+        for (int i = 1; i == 1; i--){
+            printf ("Direita\n");
+        }
+    printf ("Cima\n");
+    moverbispo (casas - 1);
+    }
+}
+
 int main() {
     
     //Declaração variável de escolha da peça a ser movimentada
@@ -14,9 +38,6 @@ int main() {
     
     //Declaração variáveis de incremento das peças
 
-    int torre = 0;
-    int bispo = 0;
-    int rainha;
     int cavalo = 1;
     
     //Menu de escolha
@@ -33,12 +54,8 @@ int main() {
 
         printf ("\nVocê escolheu a Torre!\n\n");
         
-        do {
-            
-            printf("Direita\n");
-            torre++;
-
-        } while (torre < 5);
+        movertorre (5);
+        
         break;
     
     //Movimento Bispo
@@ -47,11 +64,7 @@ int main() {
     
         printf ("\nVocê escolheu o Bispo!\n\n");
         
-        while (bispo < 5)
-        {
-            printf ("Cima\nDireita\n");
-            bispo++;
-        }
+        moverbispo (5);
         
         break;
     
@@ -61,11 +74,8 @@ int main() {
         
         printf ("\nVocê escolheu a Rainha!\n\n");
 
-        for (rainha = 0; rainha < 8; rainha++)
-        {
-            printf ("Esquerda\n");
-        }
-        
+        moverrainha (8);
+
         break;
 
     //Movimento Cavalo
@@ -78,14 +88,13 @@ int main() {
         {
             for (int i = 0; i < 2; i++)
             {
-                printf ("Baixo\n");
+                printf ("Cima\n");
             }
             
-            printf ("Esquerda\n");
+            printf ("Direita\n");
             cavalo--;
-
         }
-        
+
         break;
 
     //Opção de saída do programa
